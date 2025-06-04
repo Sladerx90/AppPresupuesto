@@ -25,7 +25,7 @@
                 <div class="presupuesto_egreso--texto">Egresos</div>
                 <div class="derecha">
                     <div class="presupuesto_egreso--valor" id="egresoTotal">0</div>
-                    <div class="presupuesto_egreso--porcentaje">&nbsp;</div>
+                    <div class="presupuesto_egreso--porcentaje" id="calcular_porcentaje">%</div>
                 </div> 
             </div>
         </div>
@@ -38,7 +38,7 @@
                     <option value="ingreso" selected>+</option>
                     <option value="egreso">-</option>
                 </select>
-            <input type="text" class="agregar_descripcion" placeholder="agregar_descripción" id="descripcion">
+            <input type="text" class="agregar_descripcion" placeholder="Escribir " id="descripcion">
             <input type="number" class="agregar_valor" placeholder="valor" id="valor">
             <button class="agregar_btn" onclick="agregarDato(event)"><ion-icon name="checkmark-circle-outline"></ion-icon></button>
         </div>
