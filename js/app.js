@@ -31,7 +31,7 @@ let cargarIngresos = (descripcion, valor) =>{
     ingresosHTML += crearIngresosHTML(descripcion, valor);
     totalingresos +=valor; //totalingresos = totalingresos + valor;
     document.getElementById("ingresoTotal").textContent = formatearCLP(totalingresos);
-    document.getElementById("presupuesto").textContent = formatearCLP(totalingresos); //actualiza el presupuesto
+    document.getElementById("presupuesto").textContent = formatearCLP(totalingresos - totalEgresos); //actualiza el presupuesto
     document.getElementById("lista-ingresos").innerHTML = ingresosHTML;
     
 }
@@ -51,15 +51,15 @@ let crearIngresosHTML = (descripcion,valor) => {
 }
 
 let cargarEgreso = (descripcion, valor) => {
-    egresosHTML -= crearEgresosHTML(descripcion, valor);
-    totalEgresos -=valor; //totalingresos = totalingresos + valor;
+    egresosHTML += crearEgresosHTML(descripcion, valor);
+    totalEgresos +=valor; //totalingresos = totalingresos + valor;
     document.getElementById("egresoTotal").textContent = formatearCLP(totalEgresos);
-    document.getElementById("presupuesto").textContent = formatearCLP(totalEgresos); //actualiza el presupuesto
+    document.getElementById("presupuesto").textContent = formatearCLP(totalingresos - totalEgresos); //actualiza el presupuesto
     document.getElementById("lista-egresos").innerHTML = egresosHTML;
 }
 
 let crearEgresosHTML = (descripcion, valor) => {
-    return `div class="elemento limpiarEstilos">
+    return `<div class="elemento limpiarEstilos">
                     <div class="elemento_descripcion">${descripcion}</div>
                     <div class=" derecha limpiarEstilos">
                         <div class="elemento_valor">${formatearCLP(valor)}</div>
